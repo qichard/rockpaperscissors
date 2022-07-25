@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <Title>Rock Paper Scissors</Title>
+    </head>
+    <body>
+    </body>
+    <script>
+        function getComputerChoice() {
+            const computerChoices = ["Rock", "Paper", "Scissors"];
+            const randomNum = Math.floor(Math.random() * 3);
+            return computerChoices[randomNum];
+        }
+
+        let theComputerChoice = getComputerChoice();
+
+        console.log(theComputerChoice);
+    </script>
+</html>
