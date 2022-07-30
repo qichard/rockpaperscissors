@@ -3,73 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <Title>Rock Paper Scissors</Title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="user-choices-container">
+            <button class="choice-r">Rock</button>
+            <button class="choice-p">Paper</button>
+            <button class="choice-s">Scissors</button>
+        </div>
+        <div class="winner-container"></div>
+        <div class="scores-container">
+            <p class="user-score">Your score: 0</p>
+            <p class="computer-score">The computer's score: 0</p>
+        </div>
     </body>
-    <script>
-        function getComputerChoice() {
-            const computerChoices = ["Rock", "Paper", "Scissors"];
-            const randomNum = Math.floor(Math.random() * 3);
-            return computerChoices[randomNum];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            upperFirst = playerSelection.charAt(0).toUpperCase();
-            theRest = playerSelection.substr(1);
-            finalPlayerSelection = upperFirst + theRest;
-            winnerStr = `You win! ${finalPlayerSelection} beats ${computerSelection}!`;
-            loserStr = `You lose! ${computerSelection} beats ${finalPlayerSelection}`;
-            drawStr = `It's a draw!`;
-
-            if (finalPlayerSelection === "Rock") {
-                if (computerSelection === "Paper")
-                    return false;
-                else if (computerSelection === "Rock") 
-                     return false;
-                else 
-                    return true;
-            }
-
-            if (finalPlayerSelection === "Scissors") {
-                if (computerSelection === "Rock")
-                    return false;
-                else if (computerSelection === "Scissors") 
-                     return false;
-                else 
-                    return true;
-            }
-
-            if (finalPlayerSelection === "Paper") {
-                if (computerSelection === "Scissors")
-                    return false;
-                else if (computerSelection === "Paper") 
-                     return false;
-                else 
-                    return true;
-            }
-        }
-
-        function game() {
-
-            let counter = 0;
-
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Enter Rock, Paper, or Scissors:");
-                let computerSelection = getComputerChoice();
-                if (playRound(playerSelection, computerSelection) == true) {
-                    console.log("You're the winner!");
-                    counter += 1;
-                } else {
-                    console.log("You're the loser!");
-                }
-            }
-
-            if (counter >= 3)
-                console.log("In the end... After 5 grueling rounds... You're the winner! You beat the computer.");
-            else 
-                console.log("In the end... After 5 grueling rounds... You're the loser! The computer beat you!");
-        }
-
-        game();
+    <script src="js-file.js">
     </script>
 </html>
